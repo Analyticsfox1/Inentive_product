@@ -196,7 +196,7 @@ class Register extends Component {
 							</div>
 							<div className="form-group">
 								<input type="checkbox" name="agree-term" id="agree-term" className="agree-term" />
-								<label for="agree-term" className="label-agree-term">I agree all statements in  <a href="#" className="term-service">Terms of service</a></label>
+								<label htmlFor="agree-term" className="label-agree-term">I agree all statements in  <a href="#" className="term-service">Terms of service</a></label>
 							</div>
 							<div className="form-group">
 								<button onClick={this.handleSubmit} className="form-submit" > SIGN UP</button>

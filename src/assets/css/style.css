@@ -4,6 +4,7 @@
 body {
 	font-size: 14px;
 	line-height: 1.8;
+	height: 100%;
 	color: #222;
 	font-weight: 400;
 	font-family: 'Montserrat';
@@ -15,6 +16,58 @@ body {
 	-o-background-size: cover;
 	-ms-background-size: cover;
 	background-position: center center;
+}
+
+/* Homepage css starts */
+
+body, h1, h2, h3, h4, h5, h6 {
+	font-family: "Raleway", sans-serif
+}
+
+.bgimg-1 {
+	background-position: center;
+	background-size: cover;
+	background-image: url(/static/media/signup-bg.c72d0468.jpg);
+	min-height: 100%;
+	padding-top: 60px;
+	height: 85vh;
+	display: flex;
+	align-items: center;
+}
+
+.social-icons a.w3-button {
+	position: absolute;
+	right: 50px;
+	top: 50%;
+	transform: translatey(-50%);
+	padding: 0;
+}
+
+.social-icons a.w3-button:hover {
+	background-color: transparent !important;
+	transform: scale(1.2);
+	top: 30%;
+}
+
+.social-icons a i {
+	border: 2px solid #f8f9fa;
+	padding: 10px;
+	border-radius: 100%;
+	margin-right: 0 !important;
+	color: #fff;
+}
+
+.header-link a {
+	color: black;
+	text-decoration: none;
+}
+
+.w3-bar .w3-button {
+	padding: 16px;
+}
+
+.w3-greyscale {
+	filter: grayscale(50%);
 }
 
 body .dashboard-page {
@@ -115,7 +168,7 @@ input:focus {
 }
 
 #sidebar-wrapper .sidebar-heading {
-	padding: 0.71rem 1rem;
+	padding: 0.75rem 1rem;
 	font-size: 1.2rem;
 }
 
@@ -129,19 +182,6 @@ input:focus {
 
 #wrapper.toggled #sidebar-wrapper {
 	margin-left: 0;
-}
-
-@media (min-width: 768px) {
-	#sidebar-wrapper {
-		margin-left: 0;
-	}
-	#page-content-wrapper {
-		min-width: 0;
-		width: 100%;
-	}
-	#wrapper.toggled #sidebar-wrapper {
-		margin-left: -15rem;
-	}
 }
 
 .dashboard-page .card-header {
@@ -833,10 +873,25 @@ ul.dropdown-menu.notifications:after {
 	border-color: #3275a6 !important;
 }
 
-.text-area::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+.text-area::placeholder {
+	/* Chrome, Firefox, Opera, Safari 10.1+ */
 	color: #a29c9c;
 	font-size: 14px;
-  opacity: 1; /* Firefox */
+	opacity: 1;
+	/* Firefox */
+}
+
+@media (min-width: 768px) {
+	#sidebar-wrapper {
+		margin-left: 0;
+	}
+	#page-content-wrapper {
+		min-width: 0;
+		width: 100%;
+	}
+	#wrapper.toggled #sidebar-wrapper {
+		margin-left: -15rem;
+	}
 }
 
 @media screen and (max-width: 768px) {
@@ -851,5 +906,3 @@ ul.dropdown-menu.notifications:after {
 		padding: 50px 25px;
 	}
 }
-
-/*# sourceMappingURL=style.css.map */

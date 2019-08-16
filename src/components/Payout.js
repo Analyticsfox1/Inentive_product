@@ -146,7 +146,7 @@ class Payout extends Component {
 							<div>
 								<Button className="ml-1 generate-btn mr-3">Generate </Button>
 							</div>
-							<div style={{ marginLeft: '44%' }}>
+							<div style={{ marginLeft: '49%' }}>
 								<Button className="btn-success mr-3">Accepted </Button>
 								<RejectPopUp />
 							</div>
