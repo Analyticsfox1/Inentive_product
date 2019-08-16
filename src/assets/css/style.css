@@ -66,8 +66,8 @@ body, h1, h2, h3, h4, h5, h6 {
 	padding: 16px;
 }
 
-.w3-greyscale {
-	filter: grayscale(50%);
+.w3-aboutbg {
+	background-color: #f1f1f1;
 }
 
 body .dashboard-page {
@@ -880,6 +880,25 @@ ul.dropdown-menu.notifications:after {
 	opacity: 1;
 	/* Firefox */
 }
+
+.no-page-found button {
+	height: 50px;
+	width: 150px;
+	font-size: 16px;
+}
+
+.btn-transparent {
+	background-color: transparent;
+	color: #fff;
+	border: #fff 2px solid;
+}
+
+.btn-transparent:hover {
+	background-color: #fff;
+	color: #55c7c5;
+	border: #fff 2px solid;
+}
+
 
 @media (min-width: 768px) {
 	#sidebar-wrapper {

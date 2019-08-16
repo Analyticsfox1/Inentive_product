@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import image from '../assets/images/signup-bg.jpg';
 import logo from '../assets/images/logo-blue.jpg';
-import bottomBanner from '../assets/images/bottom_banner.jpg';
+import bottomBanner from '../assets/images/corporate1.jpg';
 class Home extends Component {
 
 	// componentDidMount() {
@@ -38,14 +38,14 @@ class Home extends Component {
 					<div className="w3-text-white w-100 text-center" style={{ padding: "48px" }}>
 						<div className="d-flex justify-content-center align-items-center">
 							<img className="mr-2" style={{ height: '50px', width: '50px' }} src={logo} />
-							<span className="w3-xxxlarge">BRAND</span>
+							<span className="w3-xxxlarge" style={{letterSpacing:'5px'}}>BRAND</span>
 						</div>
 						<div className="w3-xxlarge w3-hide-small">Start something that matters.</div>
 						<div className="w3-large w3-hide-small">Today's investment climate offers unprecedented opportunities. <br/> Our mission is to help clients take advantage of those opportunities.</div>
 					</div>
 				</header>
 
-				<div className=" w3-white w3-container" style={{ padding: "75px 16px" }} id="about">
+				<div className="w3-aboutbg w3-container" style={{ padding: "75px 16px" }} id="about">
 					<h3 className="w3-center">ABOUT THE COMPANY</h3>
 					<p className="w3-center w3-large">Key features of our company</p>
 					<div className="w3-row-padding w3-center" style={{ marginTop: '64px' }}>
@@ -72,17 +72,17 @@ class Home extends Component {
 					</div>
 				</div>
 				<div>
-					<img src={bottomBanner} className="w3-image w3-greyscale" style={{ width: '100%' }} />
+					<img src={bottomBanner} className="w3-image w3-grayscale-min" style={{ width: '100%' }} />
 				</div>
 				<footer className="w3-center w3-black py-2 position-relative social-icons">
 					<a onClick={this.backTotop} className="w3-button"><i className="fas fa-arrow-up"></i></a>
 					<div className="w3-xlarge w3-section">
-						<i className="fab fa-facebook-square w3-hover-opacity mr-2"></i>
-						<i className="fab fa-instagram w3-hover-opacity mr-2"></i>
-						<i className="fab fa-snapchat w3-hover-opacity mr-2"></i>
-						<i className="fab fa-pinterest w3-hover-opacity mr-2"></i>
-						<i className="fab fa-twitter w3-hover-opacity mr-2"></i>
-						<i className="fab fa-linkedin w3-hover-opacity mr-2"></i>
+						<i className="fab fa-facebook-square w3-hover-opacity cursor-pointer mr-3"></i>
+						<i className="fab fa-instagram w3-hover-opacity cursor-pointer mr-3"></i>
+						<i className="fab fa-snapchat w3-hover-opacity cursor-pointer mr-3"></i>
+						<i className="fab fa-pinterest w3-hover-opacity cursor-pointer mr-3"></i>
+						<i className="fab fa-twitter w3-hover-opacity cursor-pointer mr-3"></i>
+						<i className="fab fa-linkedin w3-hover-opacity cursor-pointer mr-3"></i>
 					</div>
 				</footer>
 
