@@ -103,16 +103,22 @@ class Register extends Component {
 			// 	});
 
 			// event.preventDefault();
-			const user = { username: this.state.username, password: this.state.password }
-			this.validateUser(user);
+			const person = { username: this.state.username, password: this.state.password }
+			this.validatePerson(person);
 		}
 		this.setState({ errors: { ...errors } });
 	}
 
-	validateUser = (user) => {
+	validatePerson = (person) => {
 		const { username, password } = this.state;
-		sessionStorage.setItem("userData", JSON.stringify(user));
-		this.props.history.push('/login');
+		if (username.includes('admin')) {
+			sessionStorage.setItem("adminData", JSON.stringify(person));
+			this.props.history.push('/login');
+		}
+		if (!username.includes('admin')) {
+			sessionStorage.setItem("userData", JSON.stringify(person));
+			this.props.history.push('/login');
+		}
 	}
 
 	render() {

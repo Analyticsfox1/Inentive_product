@@ -1,22 +1,25 @@
 import React, { Component } from 'react';
-import Navbar from './Navbar';
-import SideMenu from './SideMenu';
-import ModalPopUp from './ModalPopUp';
+import Navbar from '../../components/Navbar';
+import SideMenu from '../../components/SideMenu';
+import RejectPopUp from '../../components/RejectPopUp';
+import ModalPopUp from '../../components/ModalPopUp';
 import Select from 'react-select';
 import ReactTable from 'react-table';
 import 'react-table/react-table.css';
-import { activeCaseData, monthList, leadingList, yearList, statusList } from '../constant';
+import { payoutData, monthList, leadingList, yearList } from '../../constant';
+import { Button } from 'react-bootstrap';
 
-class ActiveCases extends Component {
+class Payout extends Component {
 
 	state = {
 		isToggle: false,
 		selectedMonth: monthList[0],
 		selectedLeading: leadingList[0],
 		selectedYear: yearList[0],
-		selectedStatus: statusList[0],
+		invoice_no: '',
+		isReject: false
 	}
-	
+
 	handleToggle = () => {
 		if (this.state.isToggle) {
 			this.setState({
@@ -42,51 +45,60 @@ class ActiveCases extends Component {
 		this.setState({ selectedYear });
 	};
 
-	statusChange = (selectedStatus) => {
-		this.setState({ selectedStatus });
+	handleChange = (e) => {
+		this.setState({ [e.target.name]: e.target.value })
 	};
 
+	onRejectClick = () => {
+		this.setState({
+			isReject: true,
+		})
+	}
 
 	render() {
-		const { selectedMonth, selectedLeading, selectedYear, selectedStatus } = this.state;
+		const { selectedMonth, selectedLeading, selectedYear, invoice_no, isReject } = this.state;
 
 		const columns = [{
 			Header: 'State',
 			accessor: 'state',
 			sortable: true,
-			minWidth: 140,
+			minWidth: 110,
 		}, {
 			Header: 'Applicant Name',
 			accessor: 'applicant_name',
 			sortable: true,
-			minWidth: 140,
+			minWidth: 120,
 		}, {
-			Header: 'Sales Manager',
-			accessor: 'sales_manager',
+			Header: 'Sanctioned Loan Amt',
+			accessor: 'sanctioned_loan_amt',
 			sortable: true,
-			minWidth: 140,
+			minWidth: 150,
 		}, {
-			Header: 'Loan Amt Applied',
-			accessor: 'loan_amt',
+			Header: 'Net Pay Rate',
+			accessor: 'net_pay_rate',
 			sortable: true,
-			minWidth: 140,
+			minWidth: 100,
 		}, {
-			Header: 'App Status',
-			accessor: 'app_status',
+			Header: 'Final Payout Amt',
+			accessor: 'final_payout_amt',
 			sortable: true,
-			minWidth: 140,
+			minWidth: 120,
+		}, {
+			Header: 'Status',
+			accessor: 'status',
+			sortable: true,
+			minWidth: 100,
 		}, {
 			Header: 'Action',
 			accessor: 'action',
-			Cell: <ModalPopUp page="ActiveCase"/>,
-
+			Cell: <ModalPopUp page="Payout" />,
 		}]
-
 		return (
 			<div className={"d-flex dashboard-page" + (this.state.isToggle ? ' toggled' : ' ')} id="wrapper">
 				<SideMenu />
 				<div id="page-content-wrapper">
 					<Navbar {...this.props} handleToggle={this.handleToggle} />
+					{isReject && <RejectPopUp />}
 					<div className="container">
 						<div className="row mt-3">
 							<div className="col-md-2">
@@ -113,28 +125,37 @@ class ActiveCases extends Component {
 									placeholder="Month"
 								/>
 							</div>
-							<div className="col-md-2">
-								<Select
-									value={selectedStatus}
-									onChange={this.statusChange}
-									options={statusList}
-									placeholder="Status"
-								/>
-							</div>
 						</div>
 						<div className="mt-3">
 							<ReactTable
-								data={activeCaseData}
+								data={payoutData}
 								columns={columns}
 								defaultPageSize={5}
 							/>
 						</div>
+						<div className="input-group mt-5 d-flex align-items-center">
+							<label className="invoice-lable">Invoice No : </label>
+							<div className="col-md-2">
+								<input
+									type="text"
+									name="invoice_no"
+									value={invoice_no}
+									className="form-control"
+									onChange={this.handleChange} />
+							</div>
+							<div>
+								<Button className="ml-1 generate-btn mr-3">Generate </Button>
+							</div>
+							<div style={{ marginLeft: '49%' }}>
+								<Button className="btn-success mr-3">Accepted </Button>
+								<RejectPopUp />
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
-
 		)
 	}
 }
 
-export default ActiveCases
+export default Payout

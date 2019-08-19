@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import Navbar from './Navbar';
-import SideMenu from './SideMenu';
+import Navbar from '../../components/Navbar';
+import SideMenu from '../../components/SideMenu';
 import Select from 'react-select';
-import {  monthList, quaterList } from '../constant';
+import { monthList, quaterList } from '../../constant';
 
 class Dashboard extends Component {
 

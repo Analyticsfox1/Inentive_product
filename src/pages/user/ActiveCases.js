@@ -1,25 +1,22 @@
 import React, { Component } from 'react';
-import Navbar from './Navbar';
-import SideMenu from './SideMenu';
-import RejectPopUp from './RejectPopUp';
-import ModalPopUp from './ModalPopUp';
+import Navbar from '../../components/Navbar';
+import SideMenu from '../../components/SideMenu';
+import ModalPopUp from '../../components/ModalPopUp';
 import Select from 'react-select';
 import ReactTable from 'react-table';
 import 'react-table/react-table.css';
-import { payoutData, monthList, leadingList, yearList } from '../constant';
-import { Button } from 'react-bootstrap';
+import { activeCaseData, monthList, leadingList, yearList, statusList } from '../../constant';
 
-class Payout extends Component {
+class ActiveCases extends Component {
 
 	state = {
 		isToggle: false,
 		selectedMonth: monthList[0],
 		selectedLeading: leadingList[0],
 		selectedYear: yearList[0],
-		invoice_no: '',
-		isReject: false
+		selectedStatus: statusList[0],
 	}
-
+	
 	handleToggle = () => {
 		if (this.state.isToggle) {
 			this.setState({
@@ -45,60 +42,51 @@ class Payout extends Component {
 		this.setState({ selectedYear });
 	};
 
-	handleChange = (e) => {
-		this.setState({ [e.target.name]: e.target.value })
+	statusChange = (selectedStatus) => {
+		this.setState({ selectedStatus });
 	};
 
-	onRejectClick = () => {
-		this.setState({
-			isReject: true,
-		})
-	}
 
 	render() {
-		const { selectedMonth, selectedLeading, selectedYear, invoice_no, isReject } = this.state;
+		const { selectedMonth, selectedLeading, selectedYear, selectedStatus } = this.state;
 
 		const columns = [{
 			Header: 'State',
 			accessor: 'state',
 			sortable: true,
-			minWidth: 110,
+			minWidth: 140,
 		}, {
 			Header: 'Applicant Name',
 			accessor: 'applicant_name',
 			sortable: true,
-			minWidth: 120,
+			minWidth: 140,
 		}, {
-			Header: 'Sanctioned Loan Amt',
-			accessor: 'sanctioned_loan_amt',
+			Header: 'Sales Manager',
+			accessor: 'sales_manager',
 			sortable: true,
-			minWidth: 150,
+			minWidth: 140,
 		}, {
-			Header: 'Net Pay Rate',
-			accessor: 'net_pay_rate',
+			Header: 'Loan Amt Applied',
+			accessor: 'loan_amt',
 			sortable: true,
-			minWidth: 100,
+			minWidth: 140,
 		}, {
-			Header: 'Final Payout Amt',
-			accessor: 'final_payout_amt',
+			Header: 'App Status',
+			accessor: 'app_status',
 			sortable: true,
-			minWidth: 120,
-		}, {
-			Header: 'Status',
-			accessor: 'status',
-			sortable: true,
-			minWidth: 100,
+			minWidth: 140,
 		}, {
 			Header: 'Action',
 			accessor: 'action',
-			Cell: <ModalPopUp page="Payout" />,
+			Cell: <ModalPopUp page="ActiveCase"/>,
+
 		}]
+
 		return (
 			<div className={"d-flex dashboard-page" + (this.state.isToggle ? ' toggled' : ' ')} id="wrapper">
 				<SideMenu />
 				<div id="page-content-wrapper">
 					<Navbar {...this.props} handleToggle={this.handleToggle} />
-					{isReject && <RejectPopUp />}
 					<div className="container">
 						<div className="row mt-3">
 							<div className="col-md-2">
@@ -125,37 +113,28 @@ class Payout extends Component {
 									placeholder="Month"
 								/>
 							</div>
+							<div className="col-md-2">
+								<Select
+									value={selectedStatus}
+									onChange={this.statusChange}
+									options={statusList}
+									placeholder="Status"
+								/>
+							</div>
 						</div>
 						<div className="mt-3">
 							<ReactTable
-								data={payoutData}
+								data={activeCaseData}
 								columns={columns}
 								defaultPageSize={5}
 							/>
 						</div>
-						<div className="input-group mt-5 d-flex align-items-center">
-							<label className="invoice-lable">Invoice No : </label>
-							<div className="col-md-2">
-								<input
-									type="text"
-									name="invoice_no"
-									value={invoice_no}
-									className="form-control"
-									onChange={this.handleChange} />
-							</div>
-							<div>
-								<Button className="ml-1 generate-btn mr-3">Generate </Button>
-							</div>
-							<div style={{ marginLeft: '49%' }}>
-								<Button className="btn-success mr-3">Accepted </Button>
-								<RejectPopUp />
-							</div>
-						</div>
 					</div>
 				</div>
 			</div>
+
 		)
 	}
 }
 
-export default Payout
+export default ActiveCases

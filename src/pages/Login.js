@@ -16,16 +16,16 @@ class Login extends Component {
 		}
 	}
 
-	componentWillMount = () => {
-		const active = sessionStorage.getItem('userData') ? true : false;
-		this._LoggedIn(active)
-	}
+	// componentWillMount = () => {
+	// 	const active = sessionStorage.getItem('userData') ? true : false;
+	// 	this._LoggedIn(active)
+	// }
 
-	_LoggedIn = (active) => {
-		if (active) {
-			this.props.history.push('/dashboard');
-		}
-	}
+	// _LoggedIn = (active) => {
+	// 	if (active) {
+	// 		this.props.history.push('/dashboard');
+	// 	}
+	// }
 
 	handleSubmit = () => {
 		const { errors } = this.state;
@@ -35,20 +35,22 @@ class Login extends Component {
 			}
 		}
 		this.setState({ errors: { ...errors } });
-		let data = JSON.parse(sessionStorage.getItem('userData'));
-		this.validateUser(data);
+		let user_data = JSON.parse(sessionStorage.getItem('userData'));
+		let admin_data = JSON.parse(sessionStorage.getItem('adminData'));
+		this.validateUser(user_data, admin_data);
 	}
 
-	validateUser = (data) => {
+	validateUser = (user_data, admin_data) => {
 		const { username, password } = this.state;
-		const user = { username: data ? data.username : null, password: data ? data.password : null }
-		if (data && username == data.username && password == data.password) {
+		const user = { username: user_data ? user_data.username : null, password: user_data ? user_data.password : null }
+		const admin = { username: admin_data ? admin_data.username : null, password: admin_data ? admin_data.password : null }
+		if (user_data && username == user_data.username && password == user_data.password) {
 			this.props.history.push('/dashboard');
 		}
-		if(!data && username == 'DSA1' && password == "DSA@12345") {
-			this.props.history.push('/dashboard');
+		if (admin_data && username == admin_data.username && password == admin_data.password) {
+			this.props.history.push('/admin-dashboard');
 		}
-		else{
+		else {
 			this.setState({
 				isInvalid: true
 			})

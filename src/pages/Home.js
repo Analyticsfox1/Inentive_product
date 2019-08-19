@@ -28,7 +28,7 @@ class Home extends Component {
 							<a className="w3-bar-item w3-button"><i className="fas fa-user"></i><Link to="/register" >&nbsp;&nbsp;SIGN UP</Link></a>
 							<a className="w3-bar-item w3-button"><i className="fas fa-sign-in-alt"></i><Link to="/login" >&nbsp;&nbsp;SIGN IN</Link></a>
 						</div>
-						<a className="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+						<a className="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium">
 							<i className="fa fa-bars"></i>
 						</a>
 					</div>

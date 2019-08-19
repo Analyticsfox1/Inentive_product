@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
-import Navbar from './Navbar';
-import SideMenu from './SideMenu';
+import Navbar from '../../components/Navbar';
+import SideMenu from '../../components/SideMenu';
+import ModalPopUp from '../../components/ModalPopUp';
 import Select from 'react-select';
-import { monthList, leadingList, yearList } from '../constant';
+import ReactTable from 'react-table';
+import 'react-table/react-table.css';
+import { paymentStatusData, monthList, yearList } from '../../constant';
 
-class FileInvoice extends Component {
+class PaymentStatus extends Component {
 	state = {
 		isToggle: false,
 		selectedMonth: monthList[0],
-		selectedLeading: leadingList[0],
 		selectedYear: yearList[0],
 	}
 
@@ -29,16 +31,44 @@ class FileInvoice extends Component {
 		this.setState({ selectedMonth });
 	};
 
-	leadingChange = (selectedLeading) => {
-		this.setState({ selectedLeading });
-	};
-
 	yearChange = (selectedYear) => {
 		this.setState({ selectedYear });
 	};
 
 	render() {
-		const { selectedMonth, selectedLeading, selectedYear } = this.state;
+		const { selectedMonth, selectedYear } = this.state;
+
+		const columns = [{
+			Header: 'Invoice No.',
+			accessor: 'invoice_no',
+			sortable: true,
+			minWidth: 100,
+		}, {
+			Header: 'Invoice Amount',
+			accessor: 'invoice_amt',
+			sortable: true,
+			minWidth: 120,
+		}, {
+			Header: 'Amt Paid After Deduction',
+			accessor: 'amt_paid',
+			sortable: true,
+			minWidth: 160,
+		}, {
+			Header: 'Product Type',
+			accessor: 'product_type',
+			sortable: true,
+			minWidth: 120,
+		}, {
+			Header: 'Status',
+			accessor: 'status',
+			sortable: true,
+			minWidth: 100,
+		}, {
+			Header: 'Action',
+			accessor: 'action',
+			Cell: <ModalPopUp page="PaymentStatus" />,
+		}]
+
 		return (
 			<div className={"d-flex dashboard-page" + (this.state.isToggle ? ' toggled' : ' ')} id="wrapper">
 				<SideMenu />
@@ -46,14 +76,6 @@ class FileInvoice extends Component {
 					<Navbar {...this.props} handleToggle={this.handleToggle} />
 					<div className="container">
 						<div className="row mt-3">
-							<div className="col-md-2">
-								<Select
-									value={selectedLeading}
-									onChange={this.leadingChange}
-									options={leadingList}
-									placeholder="Leading"
-								/>
-							</div>
 							<div className="col-md-2">
 								<Select
 									value={selectedYear}
@@ -71,6 +93,13 @@ class FileInvoice extends Component {
 								/>
 							</div>
 						</div>
+						<div className="mt-3">
+							<ReactTable
+								data={paymentStatusData}
+								columns={columns}
+								defaultPageSize={5}
+							/>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -78,4 +107,4 @@ class FileInvoice extends Component {
 	}
 }
 
-export default FileInvoice
+export default PaymentStatus
