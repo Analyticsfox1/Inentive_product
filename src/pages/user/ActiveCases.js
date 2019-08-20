@@ -5,14 +5,14 @@ import ModalPopUp from '../../components/ModalPopUp';
 import Select from 'react-select';
 import ReactTable from 'react-table';
 import 'react-table/react-table.css';
-import { activeCaseData, monthList, leadingList, yearList, statusList } from '../../constant';
+import { activeCaseData, monthList, productList, yearList, statusList } from '../../constant';
 
 class ActiveCases extends Component {
 
 	state = {
 		isToggle: false,
 		selectedMonth: monthList[0],
-		selectedLeading: leadingList[0],
+		selectedProduct: productList[0],
 		selectedYear: yearList[0],
 		selectedStatus: statusList[0],
 	}
@@ -34,8 +34,8 @@ class ActiveCases extends Component {
 		this.setState({ selectedMonth });
 	};
 
-	leadingChange = (selectedLeading) => {
-		this.setState({ selectedLeading });
+	productChange = (selectedProduct) => {
+		this.setState({ selectedProduct });
 	};
 
 	yearChange = (selectedYear) => {
@@ -48,7 +48,7 @@ class ActiveCases extends Component {
 
 
 	render() {
-		const { selectedMonth, selectedLeading, selectedYear, selectedStatus } = this.state;
+		const { selectedMonth, selectedProduct, selectedYear, selectedStatus } = this.state;
 
 		const columns = [{
 			Header: 'State',
@@ -85,15 +85,15 @@ class ActiveCases extends Component {
 		return (
 			<div className={"d-flex dashboard-page" + (this.state.isToggle ? ' toggled' : ' ')} id="wrapper">
 				<SideMenu />
-				<div id="page-content-wrapper">
+				<div id="page-content-wrapper" className="pl-0">
 					<Navbar {...this.props} handleToggle={this.handleToggle} />
 					<div className="container">
 						<div className="row mt-3">
 							<div className="col-md-2">
 								<Select
-									value={selectedLeading}
-									onChange={this.leadingChange}
-									options={leadingList}
+									value={selectedProduct}
+									onChange={this.productChange}
+									options={productList}
 									placeholder="Leading"
 								/>
 							</div>

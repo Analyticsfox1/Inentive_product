@@ -9,7 +9,7 @@ class SideMenu extends Component {
 			<>
 				{
 					this.props.page === 'admin' ?
-						<div id="wrapper">
+						<div id="wrapper" className="left_menu">
 							<div className="border-right" id="sidebar-wrapper">
 								<div className="sidebar-heading d-flex align-items-center text-white bg-dark-blue"><img style={{ height: '50px', width: '80px' }} src={banklogo} /></div>
 								<div className="list-group list-group-flush">

@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import Navbar from '../../components/Navbar';
 import SideMenu from '../../components/SideMenu';
 import Select from 'react-select';
-import { monthList, leadingList, yearList } from '../../constant';
+import { monthList, productList, yearList } from '../../constant';
 
 class FileInvoice extends Component {
 	state = {
 		isToggle: false,
 		selectedMonth: monthList[0],
-		selectedLeading: leadingList[0],
+		selectedProduct: productList[0],
 		selectedYear: yearList[0],
 	}
 
@@ -29,8 +29,8 @@ class FileInvoice extends Component {
 		this.setState({ selectedMonth });
 	};
 
-	leadingChange = (selectedLeading) => {
-		this.setState({ selectedLeading });
+	productChange = (selectedProduct) => {
+		this.setState({ selectedProduct });
 	};
 
 	yearChange = (selectedYear) => {
@@ -38,19 +38,19 @@ class FileInvoice extends Component {
 	};
 
 	render() {
-		const { selectedMonth, selectedLeading, selectedYear } = this.state;
+		const { selectedMonth, selectedProduct, selectedYear } = this.state;
 		return (
 			<div className={"d-flex dashboard-page" + (this.state.isToggle ? ' toggled' : ' ')} id="wrapper">
 				<SideMenu />
-				<div id="page-content-wrapper">
+				<div id="page-content-wrapper" className="pl-0">
 					<Navbar {...this.props} handleToggle={this.handleToggle} />
 					<div className="container">
 						<div className="row mt-3">
 							<div className="col-md-2">
 								<Select
-									value={selectedLeading}
-									onChange={this.leadingChange}
-									options={leadingList}
+									value={selectedProduct}
+									onChange={this.productChange}
+									options={productList}
 									placeholder="Leading"
 								/>
 							</div>

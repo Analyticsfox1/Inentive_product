@@ -6,7 +6,7 @@ import ModalPopUp from '../../components/ModalPopUp';
 import Select from 'react-select';
 import ReactTable from 'react-table';
 import 'react-table/react-table.css';
-import { payoutData, monthList, leadingList, yearList } from '../../constant';
+import { payoutData, monthList, productList, yearList } from '../../constant';
 import { Button } from 'react-bootstrap';
 
 class Payout extends Component {
@@ -14,7 +14,7 @@ class Payout extends Component {
 	state = {
 		isToggle: false,
 		selectedMonth: monthList[0],
-		selectedLeading: leadingList[0],
+		selectedProduct: productList[0],
 		selectedYear: yearList[0],
 		invoice_no: '',
 		isReject: false
@@ -37,8 +37,8 @@ class Payout extends Component {
 		this.setState({ selectedMonth });
 	};
 
-	leadingChange = (selectedLeading) => {
-		this.setState({ selectedLeading });
+	productChange = (selectedProduct) => {
+		this.setState({ selectedProduct });
 	};
 
 	yearChange = (selectedYear) => {
@@ -56,7 +56,7 @@ class Payout extends Component {
 	}
 
 	render() {
-		const { selectedMonth, selectedLeading, selectedYear, invoice_no, isReject } = this.state;
+		const { selectedMonth, selectedProduct, selectedYear, invoice_no, isReject } = this.state;
 
 		const columns = [{
 			Header: 'State',
@@ -96,16 +96,16 @@ class Payout extends Component {
 		return (
 			<div className={"d-flex dashboard-page" + (this.state.isToggle ? ' toggled' : ' ')} id="wrapper">
 				<SideMenu />
-				<div id="page-content-wrapper">
+				<div id="page-content-wrapper" className="pl-0">
 					<Navbar {...this.props} handleToggle={this.handleToggle} />
 					{isReject && <RejectPopUp />}
 					<div className="container">
 						<div className="row mt-3">
 							<div className="col-md-2">
 								<Select
-									value={selectedLeading}
-									onChange={this.leadingChange}
-									options={leadingList}
+									value={selectedProduct}
+									onChange={this.productChange}
+									options={productList}
 									placeholder="Leading"
 								/>
 							</div>

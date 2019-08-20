@@ -75,6 +75,88 @@ export const paymentStatusData = [
 	}
 ];
 
+export const monthSetupData = [
+	{
+		startDate: 'May 15, 2019',
+		endDate: 'June 15, 2019',
+		month: 'May'
+	}, {
+		startDate: 'June 16, 2019',
+		endDate: 'July 10, 2019',
+		month: 'June'
+	},
+];
+
+export const approvalData = [
+	{
+		name: 'Rohit Saxsena',
+		type_of_entity: 'Pvt Ltd',
+		state: 'Maharashtra',
+		region: 'South',
+		status: 'In active'
+	},
+	{
+		name: 'Akshay Giri',
+		type_of_entity: 'Pvt Ltd',
+		state: 'Maharashtra',
+		region: 'South',
+		status: 'Approved'
+	},
+	{
+		name: 'Mohit Nukala',
+		type_of_entity: 'Pvt Ltd',
+		state: 'Maharashtra',
+		region: 'South',
+		status: 'Approved'
+	},
+	{
+		name: 'Kirtikumar Jain',
+		type_of_entity: 'Pvt Ltd',
+		state: 'Maharashtra',
+		region: 'South',
+		status: 'Rejected'
+	},
+	{
+		name: 'Gaurav Katte',
+		type_of_entity: 'Pvt Ltd',
+		state: 'Maharashtra',
+		region: 'South',
+		status: 'On Hold'
+	},
+];
+
+export const productSetupData = [
+	{
+		product_name: 'SBL',
+		description: 'Small Business Loan',
+		status: 'Active'
+	}, {
+		product_name: 'BL',
+		description: 'Business Loan',
+		status: 'Inactive'
+	}, {
+		product_name: 'PF',
+		description: 'Patient Finance',
+		status: 'Active'
+	},
+];
+
+export const slabSetupData = [
+	{
+		name: '0 - 0.5',
+		lower_limit: '0',
+		upper_limit: '50,00,000'
+	}, {
+		name: '0.5 - 1',
+		lower_limit: '50,00,000',
+		upper_limit: '1,00,00,000'
+	}, {
+		name: '< 1',
+		lower_limit: '1,00,00,000',
+		upper_limit: '-'
+	},
+];
+
 export const monthList = [
 	{ value: 'January', label: 'January' },
 	{ value: 'February', label: 'February' },
@@ -97,11 +179,30 @@ export const quaterList = [
 	{ value: 'Quater4', label: 'Quater4' },
 ];
 
-export const leadingList = [
+export const productList = [
 	{ value: 'SBL', label: 'SBL' },
 	{ value: 'BL', label: 'BL' },
 	{ value: 'ML', label: 'ML' },
 	{ value: 'RL', label: 'RL' },
+];
+
+export const payoutSetupType = [
+	{ value: 'Master', label: 'Master' },
+];
+
+export const payoutBy = [
+	{ value: 'Revenue / Month', label: 'Revenue / Month' },
+];
+
+export const EntityList = [
+	{ value: 'Pvt Ltd', label: 'Pvt Ltd' },
+];
+
+export const RegionList = [
+	{ value: 'South', label: 'South' },
+	{ value: 'North', label: 'North' },
+	{ value: 'West', label: 'West' },
+	{ value: 'East', label: 'East' },
 ];
 
 export const yearList = [
@@ -116,4 +217,7 @@ export const statusList = [
 	{ value: 'All', label: 'All' },
 	{ value: 'Disbursed', label: 'Disbursed' },
 	{ value: 'Sanctioned', label: 'Sanctioned' },
+	{ value: 'Active', label: 'Active' },
+	{ value: 'Approved', label: 'Approved' },
+	{ value: 'Rejected', label: 'Rejected' },
 ]

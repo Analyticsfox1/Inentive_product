@@ -72,7 +72,7 @@ class PaymentStatus extends Component {
 		return (
 			<div className={"d-flex dashboard-page" + (this.state.isToggle ? ' toggled' : ' ')} id="wrapper">
 				<SideMenu />
-				<div id="page-content-wrapper">
+				<div id="page-content-wrapper" className="pl-0">
 					<Navbar {...this.props} handleToggle={this.handleToggle} />
 					<div className="container">
 						<div className="row mt-3">

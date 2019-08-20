@@ -26,10 +26,10 @@ class CostSheetCalculation extends Component {
 				<SideMenu page="admin" />
 				<div id="page-content-wrapper">
 					<Navbar {...this.props} handleToggle={this.handleToggle} page="admin" />
-					<div className="container m-0">
+					<div className="container right__content">
 						<div className="row mt-3">
 							<div className="col-md-12">
-								<p className="w3-height p-3"><strong> Cost Sheet Calculation </strong></p>
+								<p style={{ color: '#5d5555' }} className="w3-height p-3"><strong> Cost Sheet Calculation </strong></p>
 							</div>
 						</div>
 

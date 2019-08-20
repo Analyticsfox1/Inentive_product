@@ -22,7 +22,7 @@ class Navbar extends Component {
 				{
 					this.props.page === 'admin' ?
 						<span className="bank-navbar">
-							<nav className="navbar navbar-expand-lg navbar-light bg-dark-blue border-bottom">
+							<nav className="navbar navbar-expand-lg navbar-light bg-dark-blue border-bottom navbar-pos-fixed">
 								<a style={{ cursor: 'pointer' }} className="text-white" onClick={this.toggleClick} id="menu-toggle"><i className="fas fa-bars"></i></a>
 
 								<button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

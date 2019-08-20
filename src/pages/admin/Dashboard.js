@@ -35,13 +35,13 @@ class Dashboard extends Component {
 		return (
 			<div className={"d-flex dashboard-page" + (this.state.isToggle ? ' toggled' : ' ')} id="wrapper">
 				<SideMenu page="admin" />
-				<div id="page-content-wrapper">
+				<div id="page-content-wrapper" >
 					<Navbar {...this.props} handleToggle={this.handleToggle} page="admin" />
-					<div className="container m-0">
+					<div className="container right__content">
 						<div className="row mt-3">
 							<div className="col-md-4">
 								<div className="row ">
-									<div className="col-md-5">
+									<div className="col-md-6">
 										<Select
 											name="selectedMonth"
 											value={selectedMonth}
@@ -108,7 +108,7 @@ class Dashboard extends Component {
 							</div>
 						</div>
 
-						<div className="row mt-4 mx-auto d-flex justify-content-center">
+						<div className="row mb-5 mt-4 mx-auto d-flex justify-content-center">
 							<div className="col-md-4">
 								<div className="card bg-white">
 									<div className="card-header w3-medium text-center">Top Performing DSA’s of Month</div>
