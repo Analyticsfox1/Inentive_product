@@ -52,8 +52,8 @@ class SlabSetup extends Component {
 					<Navbar {...this.props} handleToggle={this.handleToggle} page="admin" />
 					<div className="container right__content">
 						<div className="row mt-3">
-							<div className="col-md-12">
-								<Button className="px-4 py-2 generate-btn btn btn-primary">Create </Button>
+							<div className="col-md-12 d-flex">
+								<Button className="px-4 py-2 generate-btn ml-auto">Create </Button>
 							</div>
 						</div>
 						<div className="mt-4">

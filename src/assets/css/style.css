@@ -378,6 +378,10 @@ hr {
 	border: 0.5px solid #afaaaa;
 }
 
+.fs-16 {
+	font-size: 16px;
+}
+
 .fs-18 {
 	font-size: 18px;
 }
@@ -733,6 +737,8 @@ input[type=checkbox]:not(old):checked+label>span:before {
 	text-align: center;
 	color: white;
 	background: #3275a6;
+	position: relative;
+	z-index: 0;
 }
 
 .ReactTable .rt-tr {
@@ -742,6 +748,42 @@ input[type=checkbox]:not(old):checked+label>span:before {
 
 .ReactTable .rt-table {
 	border-radius: 10px;
+}
+
+.payoutPage .rt-resizer:after {
+	display: none;
+}
+
+.payoutPage .rt-resizer:before {
+	display: none;
+}
+
+/* .payoutPage .ReactTable {
+	width: 400px;
+} */
+
+.payoutPage boarder {
+	border: 1px solid hsl(0, 0%, 80%)!important;
+}
+
+.payoutPage .check-box {
+	height: 15px;
+	width: 20px;
+}
+
+/* .payoutPage .ReactTable .rt-thead .rt-tr  {
+	text-align: left;
+}
+
+.payoutPage .ReactTable .rt-tr  {
+	text-align: left;
+} */
+
+.payoutPage input {
+	border: 1px solid #c3bebe;
+	border-radius: 6px;
+	width: 120px;
+	padding-left: 10px;
 }
 
 .rt-resizer:after {
@@ -1029,6 +1071,13 @@ span.input-group-text {
 	border-bottom-left-radius: 0px;
 }
 
+.attachment-icon span.input-group-text {
+	border-top-right-radius: 0px;
+	border-bottom-right-radius: 0px;
+	border-top-left-radius: 4px;
+	border-bottom-left-radius: 4px;
+}
+
 .input-height {
 	height: 47px;
 }
@@ -1055,6 +1104,7 @@ span.input-group-text {
 #page-content-wrapper .right__content {
 	padding-top: 80px;
 }
+
 
 @media (min-width: 768px) {
 	#sidebar-wrapper {

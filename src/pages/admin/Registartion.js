@@ -27,7 +27,9 @@ class Registration extends Component {
 		phone_number: '',
 		RM_name: '',
 		RM_email: '',
-		RM_phone_number: ''
+		RM_phone_number: '',
+		attachment: '',
+		document_name: '',
 	}
 
 	handleToggle = () => {
@@ -58,7 +60,7 @@ class Registration extends Component {
 	}
 
 	render() {
-		const { pan_number, pan_name, selectedGST_no, selectedEntity, trade_name, address, city, selectedState, pincode, type_of_buissness, gst_reg_date, name, email, phone_number, RM_name, RM_email, RM_phone_number } = this.state;
+		const { pan_number, pan_name, selectedGST_no, selectedEntity, trade_name, address, city, selectedState, pincode, type_of_buissness, gst_reg_date, name, email, phone_number, RM_name, RM_email, RM_phone_number, attachment, document_name } = this.state;
 
 		return (
 			<div className={"d-flex dashboard-page" + (this.state.isToggle ? ' toggled' : ' ')} id="wrapper">
@@ -259,6 +261,32 @@ class Registration extends Component {
 						<div className="row mt-3">
 							<div className="col-md-4">
 								<label className="font-weight-bold fs-18 text-underline"> Document Upload </label>
+							</div>
+						</div>
+						<div className="row mt-1">
+							<div className="col-md-5">
+								<label className="font-weight-bold">Attachment </label>
+								<div className="input-group-append attachment-icon">
+									<span className="input-group-text"><i className="fas fa-folder-open"></i></span>
+									<input
+										type="text"
+										name="attachment"
+										className="form-control h-40"
+										value={attachment}
+										onChange={this.handleChange} />
+								</div>
+							</div>
+							<div className="col-md-5">
+								<label className="font-weight-bold">Document Name </label>
+								<input
+									type="text"
+									name="document_name"
+									className="form-control h-40"
+									value={document_name}
+									onChange={this.handleChange} />
+							</div>
+							<div className="col-md-2" style={{ marginTop: '40px' }}>
+								<span><i className="fas fa-plus-circle fa-2x"></i></span>
 							</div>
 						</div>
 						<div className="row mt-3" style={{ float: 'right' }}>

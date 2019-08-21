@@ -87,6 +87,22 @@ export const monthSetupData = [
 	},
 ];
 
+export const payoutSetupData = [
+	{
+		disbursal: '0.1 - 0.50',
+		no_of_files: '1',
+		monthly_payout: '0.25'
+	}, {
+		disbursal: '0.51 - 1',
+		no_of_files: '3',
+		monthly_payout: '0.35'
+	}, {
+		disbursal: '> 1',
+		no_of_files: '4',
+		monthly_payout: '0.45'
+	},
+];
+
 export const approvalData = [
 	{
 		name: 'Rohit Saxsena',
@@ -188,10 +204,13 @@ export const productList = [
 
 export const payoutSetupType = [
 	{ value: 'Master', label: 'Master' },
+	{ value: 'Special', label: 'Special' },
 ];
 
 export const payoutBy = [
 	{ value: 'Revenue / Month', label: 'Revenue / Month' },
+	{ value: 'Revenue / Year', label: 'Revenue / Year' },
+	{ value: 'Revenue No of Cases / Month', label: 'Revenue No of Cases / Month' },
 ];
 
 export const EntityList = [
