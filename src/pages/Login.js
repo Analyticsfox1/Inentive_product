@@ -128,6 +128,10 @@ class Login extends Component {
 							<div className="form-group">
 								<p className="loginhere mt-0"> Do you haven't an account ? <Link className="loginhere-link" to="/register">Create account</Link></p>
 							</div>
+
+							<div className="form-group">
+								<p className="loginhere mt-0"><Link to="/" className="home-link"><i className="fas fa-home fa-lg mr-1" />Home</Link></p>
+							</div>
 						</div>
 					</div>
 				</section>

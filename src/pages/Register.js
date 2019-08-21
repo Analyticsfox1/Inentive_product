@@ -211,6 +211,10 @@ class Register extends Component {
 							<p className="loginhere">
 								Have already an account ? <Link to="login" className="loginhere-link">Login here</Link>
 							</p>
+
+							<div className="form-group">
+								<p className="loginhere mt-3"><Link to="/" className="home-link"><i className="fas fa-home fa-lg mr-1" />Home</Link></p>
+							</div>
 						</div>
 					</div>
 				</section>

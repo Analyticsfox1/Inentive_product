@@ -25,8 +25,8 @@ class Home extends Component {
 					<div className="w3-bar w3-white w3-card" id="myNavbar">
 						<div className="w3-right w3-hide-small header-link">
 							<a onClick={this.aboutClick} className="w3-bar-item w3-button"><i className="fa fa-users"></i>&nbsp;&nbsp;ABOUT</a>
-							<a className="w3-bar-item w3-button"><i className="fas fa-user"></i><Link to="/register" >&nbsp;&nbsp;SIGN UP</Link></a>
-							<a className="w3-bar-item w3-button"><i className="fas fa-sign-in-alt"></i><Link to="/login" >&nbsp;&nbsp;SIGN IN</Link></a>
+							<a><Link className="w3-bar-item w3-button" to="/register" ><i className="fas fa-user"></i>&nbsp;&nbsp;SIGN UP</Link></a>
+							<a><Link className="w3-bar-item w3-button" to="/login" ><i className="fas fa-sign-in-alt"></i>&nbsp;&nbsp;SIGN IN</Link></a>
 						</div>
 						<a className="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium">
 							<i className="fa fa-bars"></i>
@@ -38,10 +38,10 @@ class Home extends Component {
 					<div className="w3-text-white w-100 text-center" style={{ padding: "48px" }}>
 						<div className="d-flex justify-content-center align-items-center">
 							<img className="mr-2" style={{ height: '50px', width: '50px' }} src={logo} />
-							<span className="w3-xxxlarge" style={{letterSpacing:'5px'}}>BRAND</span>
+							<span className="w3-xxxlarge" style={{ letterSpacing: '5px' }}>BRAND</span>
 						</div>
 						<div className="w3-xxlarge w3-hide-small">Start something that matters.</div>
-						<div className="w3-large w3-hide-small">Today's investment climate offers unprecedented opportunities. <br/> Our mission is to help clients take advantage of those opportunities.</div>
+						<div className="w3-large w3-hide-small">Today's investment climate offers unprecedented opportunities. <br /> Our mission is to help clients take advantage of those opportunities.</div>
 					</div>
 				</header>
 
@@ -75,7 +75,6 @@ class Home extends Component {
 					<img src={bottomBanner} className="w3-image w3-grayscale-min" style={{ width: '100%' }} />
 				</div>
 				<footer className="w3-center w3-black py-2 position-relative social-icons">
-					<a onClick={this.backTotop} className="w3-button"><i className="fas fa-arrow-up"></i></a>
 					<div className="w3-xlarge w3-section">
 						<i className="fab fa-facebook-square w3-hover-opacity cursor-pointer mr-3"></i>
 						<i className="fab fa-instagram w3-hover-opacity cursor-pointer mr-3"></i>
@@ -85,7 +84,7 @@ class Home extends Component {
 						<i className="fab fa-linkedin w3-hover-opacity cursor-pointer mr-3"></i>
 					</div>
 				</footer>
-
+				<a onClick={this.backTotop} className="w3-button scroll-arrow"><i className="fas fa-arrow-up"></i></a>
 			</>
 		)
 	}

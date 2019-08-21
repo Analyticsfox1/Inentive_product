@@ -289,9 +289,9 @@ class Registration extends Component {
 								<span><i className="fas fa-plus-circle fa-2x"></i></span>
 							</div>
 						</div>
-						<div className="row mt-3" style={{ float: 'right' }}>
-							<div className="col-md-2">
-								<Button className="px-4 py-2 generate-btn btn btn-primary">Submit </Button>
+						<div className="row mt-3">
+							<div className="col-md-12 d-flex">
+								<Button className="px-4 py-2 ml-auto generate-btn btn btn-primary">Submit </Button>
 							</div>
 						</div>
 					</div>

@@ -114,11 +114,11 @@ class Dashboard extends Component {
 									<div className="card-header w3-medium text-center">Top Performing DSA’s of Month</div>
 									<div className="card-body p-3">
 										<div className="d-flex justify-content-center align-content-center flex-column">
-											<div class="DSA-text-main"><p class="item-info"> DSA 1</p></div>
-											<div class="DSA-text-main"><p class="item-info"> DSA 2</p></div>
-											<div class="DSA-text-main"><p class="item-info"> DSA 3</p></div>
-											<div class="DSA-text-main"><p class="item-info"> DSA 4</p></div>
-											<div class="DSA-text-main"><p class="item-info"> DSA 5</p></div>
+											<div className="DSA-text-main"><p className="item-info"> DSA 1</p></div>
+											<div className="DSA-text-main"><p className="item-info"> DSA 2</p></div>
+											<div className="DSA-text-main"><p className="item-info"> DSA 3</p></div>
+											<div className="DSA-text-main"><p className="item-info"> DSA 4</p></div>
+											<div className="DSA-text-main"><p className="item-info"> DSA 5</p></div>
 										</div>
 									</div>
 								</div>
@@ -129,11 +129,11 @@ class Dashboard extends Component {
 									<div className="card-header w3-medium text-center">Worst Performing DSA’s of Month</div>
 									<div className="card-body p-3">
 										<div className="d-flex justify-content-center align-content-center flex-column">
-											<div class="DSA-text-main"><p class="item-info"> DSA 46</p></div>
-											<div class="DSA-text-main"><p class="item-info"> DSA 47</p></div>
-											<div class="DSA-text-main"><p class="item-info"> DSA 48</p></div>
-											<div class="DSA-text-main"><p class="item-info"> DSA 49</p></div>
-											<div class="DSA-text-main"><p class="item-info"> DSA 50</p></div>
+											<div className="DSA-text-main"><p className="item-info"> DSA 46</p></div>
+											<div className="DSA-text-main"><p className="item-info"> DSA 47</p></div>
+											<div className="DSA-text-main"><p className="item-info"> DSA 48</p></div>
+											<div className="DSA-text-main"><p className="item-info"> DSA 49</p></div>
+											<div className="DSA-text-main"><p className="item-info"> DSA 50</p></div>
 										</div>
 									</div>
 								</div>

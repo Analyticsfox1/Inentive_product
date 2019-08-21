@@ -108,7 +108,7 @@ class Dashboard extends Component {
 								<div className="card bg-white">
 									<div className="card-header text-center text-underline">Payout Slabs</div>
 									<div className="card-body pb-0">
-										<div className="d-flex justify-content-between  align-content-center">
+										<div className="d-flex justify-content-center  align-content-center">
 											<img className="text-center" style={{ height: '200px', width: '350px' }} src="https://www.iciciprulife.com/content/icici-prudential-life-insurance/ulip-plans/icicipru-lifetime-classic/_jcr_content/contentpar/container_fullwidth/container-fullwidth-parsys/gridsystem_424694496/column-2/image.img.jpg/1495535401737.jpg" />
 										</div>
 									</div>

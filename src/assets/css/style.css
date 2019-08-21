@@ -642,6 +642,12 @@ input[type=checkbox]:not(old):checked+label>span:before {
 	color: #222;
 }
 
+.home-link {
+	font-weight: 700;
+	color: #6daaa5;
+	font-size: 16px;
+}
+
 .field-icon {
 	float: right;
 	margin-right: 17px;
@@ -1105,6 +1111,19 @@ span.input-group-text {
 	padding-top: 80px;
 }
 
+.toggled .navbar-pos-fixed {
+	width: calc(100% - 0px);
+}
+
+.scroll-arrow {
+	position: fixed;
+	right: 20px;
+	color: #fff !important;
+	bottom: 20px;
+	border-radius: 100%;
+	border: 2px solid #f3f5f457;
+	background: gray;
+}
 
 @media (min-width: 768px) {
 	#sidebar-wrapper {
